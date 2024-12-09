@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" device="width=device-width, initial-scale=1" /> 
+    <meta name="keywords" content="restaurant, Japanese, sushi, Charlotte, food, dinner" />
+    <title>Yami Sushi House</title>
+    <link href="layout.css" rel="stylesheet" />
+    <link href="format.css" rel="stylesheet" />
+    <script src="jsCode.js" async></script>
+</head>
+
+<body>
+    <header>
+        <img src="images/banner.jpg" alt="Yami Sushi House" />
+    </header>
+    <nav>
+        <ul>
+           <li><a href="home.html">Home</a></li>
+           <li><a href="location.html">Location</a></li>
+           <li><a href="aboutUs.html">About Us</a></li>
+           <li><a href="order.html">Order/Reservation</a></li>
+        </ul>
+     </nav>
+     <div id="grid">
+        <h1>Yami Sushi House</h1>
+        <p id="date"></p>
+        <p id="countdown"></p>
+        <img src="images/night2.jpg" alt="Sushi Plate" />
+
+        <!--Create a form with multiple field sets-->
+        <form id="order">
+            <fieldset id="customerInfo">
+
+                <div class="formRow">
+                <label for="name">Name</label>
+                <!--Include the text input type-->
+                <!--Validate data with field lengths-->
+                <!--Validate data with by having certain fields required-->
+                <input name="name" id="name" type="text" required maxlength="20">
+                </div>
+                </br>
+
+                <label for="phone">Phone number</label>
+                <!--Include at least one input that is set for a mobile keyboard type-->
+                <!--Validate data with patterns-->
+                <input name="number" id="phone" type="tel" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$" required>
+                </br>
+                </br>
+
+                <label for="pickuptime">Pickup date and time</label>
+                <!--Include the date/time input type-->
+                <input name="time" id="pickupTime" type="datetime-local" required>
+                <button type="button" onclick="countdown()">Check Countdown</button>
+                </br>
+                </br>
+                
+                <label for="location">Location</label>
+                <!--Include a datalist and use it for input-->
+                <input name="locaiton" id="location" type="text" list="choices" required>
+                <datalist id="choices">
+                    <option value="Trade Street">
+                    <option value="East 5th Street">
+                </datalist>
+
+            </fieldset>
+
+            <fieldset id="orderInfo">
+
+                <label for="orderType">Order type</label>
+                <!--Create a selection list-->
+                <select name="orderType" id="orderType">
+                    <option value="orderType1">Take-out</option>
+                    <option value="orderType2">Dine-in</option>
+                    <option value="orderType3">Hibachi</option>
+                </select>
+                </br></br>
+
+                <label for="guests">Number of guests</label>
+                <!--Include the spinner input type-->
+                <input name="guests" id="guests" type="number" min="1" max="10" step="1" value="5" required>
+                </br></br>
+
+                <label for="length">Reservation length (minutes)
+                <!--Include the radio input type-->
+                <input name="length" id="length" type="radio">20</input>
+                <input name="length" id="length" type="radio">40</input>
+                <input name="length" id="length" type="radio">60</input>
+                </label>
+            </fieldset>
+
+            <fieldset id="itemInfo">
+                <label for="items">Select Items</label>
+
+                    <div id="menu">
+                        <div class="checkbox-container">
+                            <!--Include the check box input type-->
+                            <input name="menuItem" id="item1" type="checkbox">
+                            <label for="option1">Spicy Seasame Roll</label>
+                            <img src="images/plate1.jpg" alt="Spicy Seasame Rolls">
+                        </div>
+                        <div class="checkbox-container">
+                            <input name="menuItem" id="item2" type="checkbox">
+                            <label for="option2">Shrimp and Salmon Roll</label>
+                            <img src="images/plate2.jpg" alt="Shrimp and Salmon Roll">
+                        </div>
+                        <div class="checkbox-container">
+                            <input name="menuItem" id="item3" type="checkbox">
+                            <label for="option3">Salmon Roll</label>
+                            <img src="images/plate3.jpg" alt="Salmon Roll">
+                        </div>
+                    </div>
+                </br></br>
+
+                <label for="email">Spicyness</label>
+                <!--Include the range slider input type-->
+                <input name="Account Name" id="name" type="range" min="0" max="100">
+                </br></br>
+                
+                <div id="instructions-container">
+                    <label for="instructions">Special Instructions</label>
+                    <!--Create a text area-->
+                    <textarea name="text" id="instructions" maxlength="200"></textarea>
+                </div>  
+            </fieldset>
+
+            <fieldset id="endform">
+                <!--Create a submit and cancel/reset button-->
+                <button type="submit">Submit</button>
+                <button type="cancel">Cancel</button>
+            </fieldset>
+
+        </form>
+     </div>
+</body>
+</html>
